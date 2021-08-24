@@ -1,5 +1,5 @@
 body{
-    background:#f8f9fa;
+    background: #CCCCCC;
 }
 /* home page */
  #home--block1{
@@ -8,22 +8,26 @@ body{
      padding:20px;
  }
 
+ .bg-white{
+    background:#fff;
+ }
+
  #home--block1 div:nth-child(1){
   
      border-radius: 10px;
      height:120px;
      margin-top:10px;
+  
     
  }
 #home--block1 div{
     background-color: #fff;
 }
  #home--block1 div:nth-child(2){
-
     border-radius: 10px;
     height:230px;
     margin-top:20px;
- 
+  
 }
 
  #home--block3{
@@ -39,11 +43,69 @@ body{
     position: relative;
     width:60%;
     margin:0 auto;
+  
 }
 
 .reunion{
-    height:100px;
-    border:1px solid black;
+    height:auto;
+    background:#fff;
     margin-top:50px;
+    border:5px solid #fff;
+    border-radius: 10px;
+}
+
+.commentaire{
+    height:auto;
+  background:#fff;
+    margin-top:50px;
+    border:5px solid #fff;
+    border-radius: 10px;
+}
+
+.interaction span{
+    margin-left:10px;
+}
+
+#home--block1 a{
+    text-decoration:none;
+    margin-left:10px;
+}
+
+#home--block1 a i{
+    margin-left:10px;
+    font-size: 1.3rem;
+}
+
+.interaction span i{
+    font-size:30px;
+    margin-left:60px;
+}
+.label-reunion{
+    background-color: rgb(60, 94, 37);
+
+    background: radial-gradient(  rgb(118, 184, 73),rgb(60, 94, 37));
+    color:#fff;
+    border-radius:10px;
+}
+
+.reunion small{
+    color:#96683E ;
+    font-weight:bold;
+}
+
+ .home-logout i{
+  color:#FD0117;
+}
+
+.link-dashboard i{
+  color:#0878C5;
+}
+
+ul#menuWithIcon  li{
+    margin:20px !important;
+}
+
+#menuWithIcon i{
+  font-size: 25px;
 }
 /* end home page */
