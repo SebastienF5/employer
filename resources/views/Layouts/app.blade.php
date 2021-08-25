@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,7 +16,12 @@
     <title>Employer | {{$title}} </title>
 </head>
 <body>
-    @include ('Partials.menuHome')
+    @if(Illuminate\Support\Facades\Route::is('home'))
+        @include ('Partials.menuHome')
+    @else
+        @include('Partials.secondMenu')
+    @endif
+
     @yield('content')
 
     <!-- js link -->

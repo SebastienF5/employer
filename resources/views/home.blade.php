@@ -11,7 +11,7 @@
                  </div>
                  <div class="col-12 shadow-sm p-2 ">
                  <a href="" class="home-logout">Logout   <i class="fas fa-sign-out-alt"></i></a><br/>
-                 <a href="" class="link-dashboard">Dashboard <i class="fas fa-user-cog"></i></a>
+                 <a href="{{asset(route('dashboard'))}}" class="link-dashboard">Dashboard <i class="fas fa-user-cog"></i></a>
                  </div>
             </div>
             <!--block2-->
