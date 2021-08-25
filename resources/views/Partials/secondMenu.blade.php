@@ -5,9 +5,10 @@
     <div class="item-dashboard">
         <ul class="list-unstyled">
             <li><a href="{{route('home')}}"> <i class="fas fa-home"></i><br/>Accueil  </a></li>
-            <li><a href=""><i class="fas fa-truck"></i></a></li>
+            <li><a href="{{route('delivery')}}"><i class="fas fa-truck"></i></a></li>
             <li><a href=""><i class="fas fa-user-plus"></i></a></li>
             <li><a href=""> <i class="far fa-comment"></i></a></li>
+            <li><a href="{{route('dashboard')}}"><i class="fas fa-cog"></i></a></li>
         </ul>
     </div>
 

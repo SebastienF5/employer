@@ -123,7 +123,7 @@ ul#menuWithIcon  li{
 }
 
 .item-dashboard{
-    margin-top:100px;
+    margin-top:60px;
  
 }
 
@@ -210,4 +210,39 @@ ul#menuWithIcon  li{
 .info-vente span{
     font-size:40px;
 }
+
+
 /*end dashboard*/
+
+/*delivery*/
+
+.table-delivery{
+  height:475px;
+    background:#fff;
+    border-radius: 20px;
+}
+
+.delivery{
+height:475px;
+}
+
+.delivery-form{
+
+}
+
+.delivery input,select{
+    height:45px;
+    border-radius:10px;
+}
+
+.p-right{
+margin-right:-40px;
+
+}
+
+.p-left{
+    margin-right:20px;
+    
+    }
+
+/*end*/
