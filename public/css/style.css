@@ -246,3 +246,39 @@ margin-right:-40px;
     }
 
 /*end*/
+
+/*profil*/
+.content-profil{
+    position:absolute;
+    right:0;
+}
+.last-comment{
+  
+    height:584px;
+     margin-top:40px;
+    background-color: #fff;
+    border-radius: 20px;
+    margin-left:10px;
+}
+
+.modify-profil,.others{
+  
+    background-color: #fff;
+    margin-top:40px;
+    border-radius: 20px;
+    float:right;
+}
+.others{
+    height:100px;
+}
+.modify-profil{
+  height:430px;
+  border-radius: 20px;
+  padding:5px;
+  
+}
+
+.container-option{
+    margin-left:60px;
+}
+/*end*/
