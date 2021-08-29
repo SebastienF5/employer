@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 use App\Http\Controllers\DeliveryController;
+use App\Http\Controllers\ProfilController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,3 +21,4 @@ use App\Http\Controllers\DeliveryController;
 Route::get('/',[HomeController::class,'index'])->name('home');
 Route::get('dashboard',[DashboardController::class,'show'])->name('dashboard');
 Route::get('delivery',[DeliveryController::class,'show'])->name('delivery');
+Route::get('profil',[ProfilController::class,'show'])->name('profil');
