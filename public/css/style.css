@@ -323,3 +323,37 @@ margin-right:-40px;
      text-decoration: none;
  }
 /*end */
+
+/*registrer*/
+.registrer{
+    height:auto;
+    border-radius: 20px;
+    padding:5px;
+}
+
+.registrer-logo{
+    margin-top:-90px;
+}
+
+.registrer-form{
+    margin-top:-120px;
+}
+
+.content-registrer{
+    height: 100vh;
+    background:url(../images/backgroundPlant.jpg);
+    background-size:cover;
+    background-position:top;
+}
+
+.content-registrer .row{
+    background:rgba(0,0,0,0.6);
+    height:100vh;
+}
+
+.link-login{
+    color:#fff;
+    text-decoration: none;
+}
+
+/*end*/

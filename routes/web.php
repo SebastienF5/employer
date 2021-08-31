@@ -6,6 +6,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ProfilController;
 use App\Http\Controllers\DeliveryController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\RegistrerController;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 /*

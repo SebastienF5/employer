@@ -18,7 +18,7 @@
 <body>
     @if(Illuminate\Support\Facades\Route::is('home'))
         @include ('Partials.menuHome')
-    @elseif(Illuminate\Support\Facades\Route::is('login'))
+    @elseif(Illuminate\Support\Facades\Route::is('login')|| Illuminate\Support\Facades\Route::is('registrer'))
       
     @else
         @include('Partials.secondMenu')

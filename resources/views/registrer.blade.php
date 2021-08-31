@@ -1,24 +1,13 @@
 @extends('Layouts.app')
 @section('content')
-<div class="col-10 col-md-10 col-lg-10 content-profil">
-  <div class="row">
-    <div class="col-3 col-md-3 col-lg-3 shadow-sm last-comment">
-    
-     <div class="col-12 text-center p-2">
-            <h5> Utilisateur </h5>
-            <img src="{{asset('images/user.jpg')}}" class="img-responsive rounded-circle col-md-8"  alt="profil user">
-            <p>Sebastien <strong>FIEFFE</strong></p>
-             <div>
-             <h6> Derniers POSTS </h6>
-             </div>
-        </div>
-    </div>
-    <div class="col-8 col-md-8 col-lg-8 container-option">
-
-    <div class="col-12 col-md-12 col-lg-12 shadow-sm modify-profil">
-        <div class="col-8 col-md-8 col-lg-8 mx-auto">
-    <form method="POST" action="">
-         <div class="mb-3">
+   <div class="container-fluid content-registrer">
+     <div class="row">
+        <div class="col-12 col-md-12 col-lg-12  text-center">
+             <img src="{{asset('images/logo/logopng.png')}}" alt="logo" class="col-md-3 registrer-logo">
+         </div>
+        <div class="col-6 col-md-6 col-lg-6 mx-auto registrer-form">
+             <form method="POST" action="">
+                  <div class="mb-3">
                
                <input type="text" class="form-control" id="idEmp" aria-describedby="EmpHelp" placeholder="Nom" name="nom">
              <!--  <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>-->
@@ -42,7 +31,7 @@
            </div>
            <div class="mb-3">
                 
-                <input type="text" class="form-control" id="adresseClient" aria-describedby="adresseHelp" name="adresseClient" placeholder="Adresse Client">
+                <input type="text" class="form-control" id="adresseEmp" aria-describedby="adresseHelp" name="adresseEmp" placeholder="Adresse">
                <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>-->
             </div>
             <div class="mb-3">
@@ -60,16 +49,9 @@
                 </select>
            </div>
             <button type="submit" class="btn btn-primary">Submit</button>
+             <a href="{{asset('login')}}" class="mx-3 link-login">j'ai un compte !</a>
             </form>
         </div>
     </div>
-    <div class="col-12 col-md-12 col-lg-12 shadow-sm others">
-             autres
-    </div>
-
- </div>
-
- </div>
- </div>
-
+   </div>
 @endsection

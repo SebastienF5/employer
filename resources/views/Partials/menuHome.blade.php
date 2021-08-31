@@ -30,8 +30,8 @@
       </ul>
 
       <p>
-        <a href="#">Login</a>/
-        <a href="#">Registrer</a>
+        <a href="{{route('login')}}">Login</a>/
+        <a href="{{route('registrer')}}">Registrer</a>
       </p>
     </div>
   </div>

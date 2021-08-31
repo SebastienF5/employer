@@ -27,7 +27,7 @@
               
             </div>
             <input type="submit" class="btn btn-default col-md-6" ><br/>
-            <a href="" class="p-3">Creer un compte</a>
+            <a href="{{route('registrer')}}" class="p-3">Creer un compte</a>
 </form>
 </div>
          </div>
