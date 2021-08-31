@@ -18,6 +18,8 @@
 <body>
     @if(Illuminate\Support\Facades\Route::is('home'))
         @include ('Partials.menuHome')
+    @elseif(Illuminate\Support\Facades\Route::is('login'))
+      
     @else
         @include('Partials.secondMenu')
     @endif
