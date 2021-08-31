@@ -282,3 +282,44 @@ margin-right:-40px;
     margin-left:60px;
 }
 /*end*/
+
+/* form */
+.content-login{
+   height:100vh;
+}
+ .block-form{
+     border:1px solid #fff;
+     background:#fff;
+    border-radius: 20px;
+   height:500px;
+   margin-top:50px;
+ }
+
+ .block-form input{
+     border-radius: 20px;
+ }
+
+ .formulaire{
+     margin-top:-80px;
+ }
+
+ .img-logo img{
+     margin-top:-20px;
+ }
+
+ .formulaire i{
+     font-size:30px;
+     color:rgb(118, 184, 73);
+ }
+
+ .formulaire input[type='submit']{
+    background:radial-gradient(  rgb(118, 184, 73),rgb(60, 94, 37));
+    outline: none;
+    color:#fff;
+ }
+
+ .formulaire a{
+     color:rgb(63, 63, 63);
+     text-decoration: none;
+ }
+/*end */
