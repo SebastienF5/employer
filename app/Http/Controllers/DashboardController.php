@@ -10,4 +10,5 @@ class DashboardController extends Controller
         $title="Dashboard";
         return view('dashboard',compact('title'));
     }
+
 }

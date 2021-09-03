@@ -10,7 +10,7 @@
                     <a href="">Comments <span class="badge bg-secondary">10</span></a>
                  </div>
                  <div class="col-12 shadow-sm p-2 ">
-                 <a href="" class="home-logout">Logout   <i class="fas fa-sign-out-alt"></i></a><br/>
+                 <a href="{{route('logout')}}" class="home-logout">Logout   <i class="fas fa-sign-out-alt"></i></a><br/>
                  <a href="{{asset(route('dashboard'))}}" class="link-dashboard">Dashboard <i class="fas fa-user-cog"></i></a>
                  </div>
             </div>

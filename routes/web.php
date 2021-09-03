@@ -7,7 +7,6 @@ use App\Http\Controllers\ProfilController;
 use App\Http\Controllers\DeliveryController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\RegistrerController;
-use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,9 +19,19 @@ use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 |
 */
 
-Route::get('/',[HomeController::class,'index'])->name('home');
-Route::get('dashboard',[DashboardController::class,'show'])->name('dashboard');
-Route::get('delivery',[DeliveryController::class,'show'])->name('delivery');
-Route::get('profil',[ProfilController::class,'show'])->name('profil');
-Route::get('login',[LoginController::class,'show'])->name('login');
-Route::get('registrer',[RegistrerController::class,'show'])->name('registrer');
+// Route::get('/', function () {
+//     return view('home');
+// });
+Route::get('/',[HomeController::class,'index'])->name('home')->middleware(['auth']);
+Route::get('dashboard',[DashboardController::class,'show'])->name('dashboard')->middleware(['auth']);
+Route::get('delivery',[DeliveryController::class,'show'])->name('delivery')->middleware(['auth']);
+Route::get('profil',[ProfilController::class,'show'])->name('profil')->middleware(['auth']);
+
+
+// Route::get('/dashboard', function () {
+//     return view('dashboard');
+// });
+
+
+
+require __DIR__.'/auth.php';

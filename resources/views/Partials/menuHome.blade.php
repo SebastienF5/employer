@@ -28,12 +28,15 @@
           <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
         </li>
       </ul>
-
+     
       <p>
+    
         <a href="{{route('login')}}">Login</a>/
-        <a href="{{route('registrer')}}">Registrer</a>
+       
+        <a href="{{route('register')}}">Registrer</a>
+     
       </p>
-    </div>
+   </div>
   </div>
 </nav>
 </div>

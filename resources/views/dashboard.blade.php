@@ -1,9 +1,11 @@
+
 @extends('Layouts.app')
 @section('content')
+@auth
  <div class="col-10 col-md-10 col-lg-10 content-dashboard">
      <div class="row">
         <div class="col-12 d-flex justify-content-between p-4">
-            <h1> Welcome, @user</h1>
+            <h1> Bienvenue, {{ Auth::user()->firstName }}</h1>
             <img src="{{asset('images/user.jpg')}}" class="img-responsive rounded-circle" width="50" alt="profil user">
         </div>
         <div class="col-8 col-md-8 col-lg-8 vente p-4">
@@ -38,18 +40,20 @@
        </div>
         <div class="col-3 col-md-3 col-lg-3 p-4 identity text-center">
         <div class="col-12 col-md-12 col-lg-12">
-        <img src="{{asset('images/user.jpg')}}" class="img-responsive rounded-circle col-md-8"  alt="profil user">
+        <img src="{{Auth::user()->profilPhoto}}" class="img-responsive rounded-circle col-md-8"  alt="profil user">
         
         </div>
         <div class="col-12 col-md-12 col-lg-12 p-2">
-            <h4> Firstname Lastanme,occupation</h4>
-            <span>useremail@employer.com</span><br/>
-            <span> +509 36523355</span><br/>
-            <span> 1236523355</span>
+            <h4>{{ Auth::user()->firstName }} {{Auth::user()->lastName}} ,{{Auth::user()->fonction}} </h4>
+            <span>{{Auth::user()->email}} </span><br/>
+            <span> {{Auth::user()->telephone}} </span><br/>
+            <span> {{Auth::user()->cin}} </span>
+          
         </div>
         </div>
      </div>
  </div>
  </div>
  </div>
+ @endauth
 @endsection

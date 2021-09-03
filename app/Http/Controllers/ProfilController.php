@@ -10,4 +10,5 @@ class ProfilController extends Controller
         $title="Profil";
         return view('profil',compact('title'));
     }
+    
 }

@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,7 +17,7 @@
 <body>
     @if(Illuminate\Support\Facades\Route::is('home'))
         @include ('Partials.menuHome')
-    @elseif(Illuminate\Support\Facades\Route::is('login')|| Illuminate\Support\Facades\Route::is('registrer'))
+    @elseif(Illuminate\Support\Facades\Route::is('login')|| Illuminate\Support\Facades\Route::is('register'))
       
     @else
         @include('Partials.secondMenu')
