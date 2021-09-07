@@ -6,13 +6,17 @@
         <ul class="list-unstyled">
             <li><a href="{{route('home')}}"> <i class="fas fa-home"></i><br/>Accueil  </a></li>
             <li><a href="{{route('delivery')}}"><i class="fas fa-truck"></i></a></li>
-            <li><a href="{{route('profil')}}"><i class="fas fa-user-plus"></i></a></li>
+            <li><a href="{{route('profil.modifyInfo',Auth::user()->id)}}"><i class="fas fa-user-plus"></i></a></li>
             <li><a href=""> <i class="far fa-comment"></i></a></li>
             <li><a href="{{route('dashboard')}}"><i class="fas fa-cog"></i></a></li>
         </ul>
     </div>
 
     <div class="exit">
-        <a href="{{route('logout')}}">Quitter</a>
+      
+        <form id="logout-form" action="{{ route('logout') }}" method="POST" >
+            {{ csrf_field() }}
+           <input type="submit" name="logout" value="quitter" class="btn btn-default">
+       </form>
     </div>
 </div>

@@ -8,10 +8,12 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav mx-auto" id="menuWithIcon">
         <li class="nav-item">
-        <a href="#">
+          @auth
+        <a href="{{route('profil.show',Auth::user()->id)}}">
                        <img src="{{asset('images/user.jpg')}}" class="img-responsive rounded-circle" 
                        width="50" alt="profil user"></a>
         </li>
+        @endauth
         <li class="nav-item">
               <a class="nav-link position-relative" href="#">
                 <i class="far fa-envelope "> </i>

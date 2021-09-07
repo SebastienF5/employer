@@ -36,19 +36,19 @@ class RegisteredUserController extends Controller
     {
 
         $request->validate([
-            // 'firstName' => ['required', 'string', 'max:255'],
-            // 'lastName' => ['required', 'string', 'max:255'],
-            // 'pseudo' => ['required', 'string', 'max:255'],
-            // 'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            // 'telephone' => ['required', 'integer', 'max:3'],
-            // 'cin' => ['required', 'integer', 'max:7'],
-            // 'adress' => ['required', 'string', 'max:255'],
-            // 'birthdate' => ['required', 'date', 'max:255'],
-            // 'gender' => ['required', 'string', 'max:255'],
-            // 'profilPhoto' => ['string', 'max:255'],
-            // 'password' => ['required', 'confirmed', Rules\Password::defaults()],
-            // 'salaire' => ['string', 'max:255'],
-            // 'fonction' => ['string', 'max:255'],
+            'firstName' => ['required', 'string', 'max:255'],
+            'lastName' => ['required', 'string', 'max:255'],
+            'pseudo' => ['string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'telephone' => ['integer', 'max:8'],
+            'cin' => [ 'integer', 'max:8'],
+            'adress' => ['string', 'max:255'],
+            'birthdate' => ['required', 'date', 'max:255'],
+            'gender' => ['required', 'string', 'max:255'],
+            'profilPhoto' => ['string', 'max:255'],
+            'password' => ['required', 'confirmed', Rules\Password::defaults()],
+            'salaire' => ['descimal'],
+            'fonction' => ['string', 'max:255'],
         ]);
 
         $user = User::create([

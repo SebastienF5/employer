@@ -25,7 +25,10 @@ use App\Http\Controllers\RegistrerController;
 Route::get('/',[HomeController::class,'index'])->name('home')->middleware(['auth']);
 Route::get('dashboard',[DashboardController::class,'show'])->name('dashboard')->middleware(['auth']);
 Route::get('delivery',[DeliveryController::class,'show'])->name('delivery')->middleware(['auth']);
-Route::get('profil',[ProfilController::class,'show'])->name('profil')->middleware(['auth']);
+Route::get('profil/{id}',[ProfilController::class,'show'])->name('profil.show')->middleware(['auth']);
+Route::post('profil/{id}',[ProfilController::class,'modifyInfo'])->name('profil.modifyInfo')->middleware(['auth']);
+Route::post('profil',[ProfilController::class,'store'])->name('profil')->middleware(['auth']);
+
 
 
 // Route::get('/dashboard', function () {
