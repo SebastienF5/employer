@@ -10,7 +10,12 @@
                     <a href="">Comments <span class="badge bg-secondary">10</span></a>
                  </div>
                  <div class="col-12 shadow-sm p-2 ">
-                 <a href="{{route('logout')}}" class="home-logout">Logout   <i class="fas fa-sign-out-alt"></i></a><br/>
+                
+                 <form id="logout-form" action="{{ route('logout') }}" method="POST" >
+                        {{ csrf_field() }}
+                      
+                    <input type="submit" name="logout" value="quitter" class="btn btn-default">  <i class="fas fa-sign-out-alt"></i>
+                  </form>
                  <a href="{{asset(route('dashboard'))}}" class="link-dashboard">Dashboard <i class="fas fa-user-cog"></i></a>
                  </div>
             </div>

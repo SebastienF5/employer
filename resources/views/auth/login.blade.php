@@ -2,14 +2,14 @@
 @section('content')
 <div class="container content-login">
     <div class="row">
-         <div class="col-6 col-md-6 col-lg-6 p-4 text-center">
-             <img src="{{asset('images/rice.png')}}" alt="rice photo" class="col-md-7">
+         <div class="col-12 col-md-12 col-lg-6 p-4 text-center">
+             <img src="{{asset('images/rice.png')}}" alt="rice photo" class="img-responsive col-4  col-md-4 col-lg-7 rice-login">
          </div>
-         <div class="col-6 col-md-6 col-lg-6 block-form  p-3">
+         <div class="col-12 col-md-12 col-lg-6 block-form  p-3 shadow-lg">
              <div class="img-logo text-center">
               <img src="{{asset('images/logo/logopng.png')}}" alt="logo manjAyiti" class="col-md-6 ">
            </div>
-   <div class="formulaire text-center">
+   <div class="formulaire text-center ">
            <!-- Session Status -->
            <x-auth-session-status class="mb-4" :status="session('status')" />
 
@@ -36,7 +36,7 @@
                     </a>
                 @endif
                </div>
-            <input type="submit" class="btn btn-default col-md-6" value="{{ __('Log in') }}"><br/>
+            <input type="submit" class="btn btn-default col-8 col-md-8 col-lg-6" value="{{ __('Log in') }}"><br/>
             <a href="{{route('register')}}" class="p-3">Creer un compte</a>
 </form>
 </div>

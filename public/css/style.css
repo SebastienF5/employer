@@ -1,5 +1,6 @@
 body{
-    background: #CCCCCC;
+    background: #f8f9fa;
+   /* #CCCCCC;*/
 }
 /* home page */
  #home--block1{
@@ -115,6 +116,12 @@ ul#menuWithIcon  li{
     height:100vh;
     background: radial-gradient(  rgb(118, 184, 73),rgb(60, 94, 37));
      color:#fff !important;
+
+}
+
+.profilUser{
+ 
+    clip-path: circle(50% at 50% 50%);
 }
 
 .menu-dashboard a{
@@ -157,10 +164,63 @@ ul#menuWithIcon  li{
     right:0;
 }
 
+.bg-white{
+    background:#fff;
+  
+}
+
+.dash-info div{
+    margin-left:5px;
+    padding:10px;
+
+}
+
 .vente{
 
 }
 
+.dash-head{
+   height:auto;
+}
+
+.dash-info {
+    margin-top:40px;
+}
+
+.dash-info div p{
+    font-weight: bold;
+    font-size:20px;
+}
+.dash-info div p span{
+    font-weight: inherit;
+    color:#dee2e6;
+    font-size:initial;
+}
+
+.container-search{
+    position:relative;
+}
+.rechercher{
+ 
+        position: absolute;
+        top: 16%;
+        left: 5%;
+        border: none;
+        background-color: inherit;
+
+}
+
+#search{
+text-align:center;
+}
+
+
+.dash-info div i{
+    font-size:30px;
+    color:rgb(118, 184, 73);
+}
+
+/*
 .vente div:nth-child(1){
   
     height:300px;
@@ -184,11 +244,18 @@ ul#menuWithIcon  li{
     margin-left:15px;
     background:#fff;
     border-radius: 20px;
+}*/
+
+td span{
+    padding:4px;
+    color:#fff;
+    border-radius:5px;
+    height:auto;
 }
 
 .identity{
-    height:475px;
-    margin-top:35px;
+    height:auto;
+    
     background:#fff;
     margin-left:50px;
     border-radius: 20px;
@@ -331,17 +398,25 @@ margin-right:-40px;
     padding:5px;
 }
 
+.mx-2{
+    margin-left:0 !important;
+}
+
 .registrer-logo{
     margin-top:-90px;
 }
 
 .registrer-form{
     margin-top:-120px;
+    height:420px;
+    border-radius:20px;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding:40px;
 }
 
 .content-registrer{
     height: 100vh;
-    background:url(../images/backgroundPlant.jpg);
+    background:url(../images/rice.jpeg);
     background-size:cover;
     background-position:top;
 }
@@ -352,8 +427,161 @@ margin-right:-40px;
 }
 
 .link-login{
-    color:#fff;
+    color:#000;
     text-decoration: none;
+}
+
+/*end*/
+
+/*media query register*/
+@media screen and (max-width:750px){
+    .registrer-logo{
+        margin-top:-80px;
+        width:50%;
+    }
+ .registrer-form {
+     width:90%;
+     padding:40px;
+     margin-top:-450px;
+     height:auto;
+     border-radius:20px;
+   background-color: #fff;
+   z-index: 6;
+ }
+
+ .rightLeft{
+     display:inherit !important;
+     justify-content: unset !important;
+     
+ }
+ .rightLeft input,select{
+     margin-left:inherit !important;
+     margin-right:inherit !important;
+     margin-bottom: 1rem!important
+ }
+ .rightLeft select{
+    margin-left:inherit !important;
+    margin-right:inherit !important;
+    margin-top:10px;
+}
+
+.clip{
+    clip-path: polygon(0 0, 100% 0, 100% 49%, 0% 100%);
+    height: 100vh;
+    background:url(../images/rice.jpeg);
+    background-size:cover;
+    background-position:top;
+    z-index: 4;
+}
+
+.content-registrer{
+    height:0;
+    background:none;
+    background-size:none;
+    background-position:none;
+}
+.content-registrer .row{
+    background:none;
+    height:100vh;
+}
+}
+
+@media screen and (max-width:600px){
+    .registrer-form{
+        margin-top:-700px;
+    }
+
+    .registrer-logo{
+        display: none;
+    }
+}
+/*end*/
+
+/*login media*/
+@media screen and (max-width:750px)
+{
+    .img-logo img
+    {
+        margin-top:-70px;
+        width:50%;
+    }
+
+    .rice-login{
+        display:none;
+    }
+    .formulaire{
+        margin-top:-40px;
+    }
+
+    .block-form{
+        margin-top:20px;
+        padding:20px !important;
+    }
+}
+/*end*/
+
+.menu-dashboard{
+    display: block !important;
+}
+/*dashboard media query */
+@media screen and (max-width:750px){
+  
+    .menu-dashboard{
+     position:absolute !important;
+     z-index:45;
+     top:17%;
+     width:80%;
+
+    }
+    .content-dashboard nav{
+        display: block !important;
+    }
+    
+    .content-dashboard{
+         width:100%;
+         position:inherit !important;
+         right:inherit;
+         z-index:4;
+    }
+
+    .dash-info{
+        display: block !important;
+        
+    }
+
+    .dash-info div{
+        margin-top:10px;
+    }
+
+    .vente{
+      margin-left:0 !important;
+      padding:20px !important;
+      width:93% !important;
+       margin:0 auto !important;
+    }
+
+    .identity{
+        height:auto;
+        width:93%;
+        background:#fff;
+        margin-left:inherit;
+         margin:0 auto !important;
+         margin-top:20px !important;
+         border-radius: inherit;
+    }
+
+    .content-dashboard .profilUser{
+        display: none;
+    }
+
+    .dash-head form{
+       
+       margin-top:10px;
+       
+    }
+
+
+   
 }
 
 /*end*/

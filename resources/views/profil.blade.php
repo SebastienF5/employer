@@ -11,7 +11,8 @@
            
          </form>-->
             <h5> Utilisateur </h5>
-            <img src="{{asset('images/user.jpg')}}" class="img-responsive rounded-circle col-md-8"  alt="profil user">
+          <img src="{{Storage::url(Auth::user()->profilPhoto)}}" class="img-responsive rounded-circle col-md-8"  alt="profil user">
+           
             <p>{{$user->firstName}}  <strong>{{$user->lastName}}</strong></p>
              <div>
              <h6> Derniers POSTS </h6>

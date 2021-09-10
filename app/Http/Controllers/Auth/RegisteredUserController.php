@@ -2,14 +2,15 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Http\Controllers\Controller;
 use App\Models\User;
-use App\Providers\RouteServiceProvider;
-use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rules;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Validation\Rules;
+use Illuminate\Auth\Events\Registered;
+use App\Providers\RouteServiceProvider;
+use Illuminate\Support\Facades\Storage;
 
 class RegisteredUserController extends Controller
 {
@@ -35,6 +36,19 @@ class RegisteredUserController extends Controller
     public function store(Request $request)
     {
 
+        
+        $tab=['jpg','jpeg','png'];
+        $extension=true;
+        $photo="";
+
+        if(!in_array($request->profilPhoto->extension(),$tab))
+        {
+            $extension=false;
+        }else{
+            $photo=Storage::disk('public')->put('profilPhoto',$request->profilPhoto);
+            
+        }
+   
         $request->validate([
             'firstName' => ['required', 'string', 'max:255'],
             'lastName' => ['required', 'string', 'max:255'],
@@ -45,7 +59,7 @@ class RegisteredUserController extends Controller
             'adress' => ['string', 'max:255'],
             'birthdate' => ['required', 'date', 'max:255'],
             'gender' => ['required', 'string', 'max:255'],
-            'profilPhoto' => ['string', 'max:255'],
+            'profilPhoto' => ['max:255'],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
             'salaire' => ['descimal'],
             'fonction' => ['string', 'max:255'],
@@ -62,7 +76,7 @@ class RegisteredUserController extends Controller
             'adress' =>$request->adress,
             'birthdate' =>$request->birthdate,
             'gender' => $request->gender,
-            'profilPhoto'=>$request->profilPhoto,
+            'profilPhoto'=>$photo,
             
             'salaire' => $request->salaire,
             'fonction' => $request->fonction,

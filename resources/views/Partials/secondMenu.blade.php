@@ -1,6 +1,6 @@
 <div class="container-fluid">
  <div class="row">
-<div class="col-2 col-md-2 col-lg-2 menu-dashboard p-4 position-fixed text-center">
+ <div class="col-2 col-md-2 col-lg-2 menu-dashboard p-4 position-fixed text-center collapse"  id="navbarToggleExternalContent">
     <span class="p-2 appName">{{config('app.name')}}</span>
     <div class="item-dashboard">
         <ul class="list-unstyled">
@@ -20,3 +20,4 @@
        </form>
     </div>
 </div>
+
