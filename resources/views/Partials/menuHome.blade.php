@@ -10,7 +10,7 @@
         <li class="nav-item">
           @auth
         <a href="{{route('profil.show',Auth::user()->id)}}">
-                       <img src="{{Storage::url(Auth::user()->profilPhoto)}}" class="img-responsive rounded-circle" 
+                       <img src="{{Storage::url(Auth::user()->profilPhoto)}}" class="img-responsive profilUser" 
                        width="50" alt="profil user"></a>
         </li>
         @endauth

@@ -21,7 +21,7 @@
                     </form>
                 </div>
          
-                <img src="{{asset('images/user.jpg')}}" class="img-responsive profilUser" width="50" alt="profil user">
+                <img src="{{Storage::url(Auth::user()->profilPhoto)}}" class="img-responsive profilUser" width="50" alt="profil user">
            </div>
            <div class="col-12 d-flex justify-content-between text-center dash-info mb-3">
                <div class="col-12 col-md-3 col-lg-2 bg-white shadow-sm">
@@ -43,7 +43,7 @@
               
            </div>
         </div>
-        <div class="col-8 col-md-12 col-lg-8 vente p-4 bg-white mx-3 shadow-lg">
+        <div class="col-8 col-md-8 col-lg-8 vente p-4 bg-white mx-3 shadow-lg">
            <div class="col-12 col-md-12 col-lg-12 d-flex justify-content-between mb-4">
                  <h4>Commandes Recentes</h4>
                  <a href="#" class="btn btn-primary">Voir Plus</a>

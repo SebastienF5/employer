@@ -3,9 +3,9 @@ var menu=document.getElementsByClassName('.menu-dashboard');
 
 showMenu.addEventListener("click",function myfunction(){
    menu.style.display='block !important';
+
 });
 if((document.getElementById('buttonMenu'))){
- 
 }
 
 //    anime({
@@ -18,3 +18,19 @@ if((document.getElementById('buttonMenu'))){
 //     delay:100
     
 //   });
+
+/*montant input*/
+const PRICE=80;
+
+var montant=document.getElementById('montant');
+var quantite=document.getElementById('quantite');
+
+quantite.addEventListener("change",function setMontant(){
+   
+   var qte=quantite.value;
+   
+   montant.value=qte * PRICE;
+
+});
+
+/*end*/

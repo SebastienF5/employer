@@ -20,8 +20,12 @@
     @elseif(Illuminate\Support\Facades\Route::is('login')|| Illuminate\Support\Facades\Route::is('register'))
       
     @else
+       @if(! Illuminate\Support\Facades\Route::is('delivery'))
         @include('Partials.secondMenu')
+        @endif
     @endif
+
+
 
     @yield('content')
 

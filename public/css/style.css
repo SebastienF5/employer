@@ -2,6 +2,14 @@ body{
     background: #f8f9fa;
    /* #CCCCCC;*/
 }
+
+a{
+    text-decoration: none;
+}
+
+.form-text{
+    color:#FD0117;
+}
 /* home page */
  #home--block1{
      height:100vh;
@@ -9,6 +17,10 @@ body{
      padding:20px;
  }
 
+ #home--block2 i{
+     font-size:30px;
+     
+ }
  .bg-white{
     background:#fff;
  }
@@ -44,7 +56,7 @@ body{
     position: relative;
     width:60%;
     margin:0 auto;
-  
+
 }
 
 .reunion{
@@ -257,7 +269,7 @@ td span{
     height:auto;
     
     background:#fff;
-    margin-left:50px;
+    margin-left:5px;
     border-radius: 20px;
 }
 
@@ -287,8 +299,13 @@ td span{
   height:475px;
     background:#fff;
     border-radius: 20px;
+      overflow: scroll;  
 }
-
+.update{
+    color:#000;
+    border-radius:10px;
+    margin-bottom:-10px;
+}
 .delivery{
 height:475px;
 }
@@ -318,6 +335,25 @@ margin-right:-40px;
 .content-profil{
     position:absolute;
     right:0;
+}
+
+.infoUser{
+    font-size:17px;
+
+
+}
+.figure{
+
+    height:200px;
+
+}
+
+.table-comment{
+    height:180px;
+    overflow: scroll;
+}
+.upper{
+ text-transform: uppercase;
 }
 .last-comment{
   
@@ -523,6 +559,7 @@ margin-right:-40px;
 .menu-dashboard{
     display: block !important;
 }
+
 /*dashboard media query */
 @media screen and (max-width:750px){
   
@@ -582,6 +619,83 @@ margin-right:-40px;
 
 
    
+}
+
+/*end*/
+
+/* delivery media */
+@media screen and (max-width:750px)
+{
+    .delivery{
+        display: block !important;
+    }
+
+    .p-right{
+        margin-right:0;
+    }
+
+    .table-delivery{
+        margin-top:30px;
+    }
+}
+
+/*media profil*/
+@media screen and (max-width:750px)
+{
+    .content-profil{
+        width:100% !important;
+    }
+
+    .last-comment{
+        height:auto;
+        width:70%;
+        margin:0 auto;
+        margin-top:30px;
+    }
+    .container-option{
+        margin-left:0px;
+    }
+   
+}
+
+/*end*/
+/*end*/
+/* .menu-dashboard{
+    display: none !important;
+} */
+
+/*home media */
+@media screen and (max-width:750px)
+{
+    #home--block1
+    {
+        height:auto;
+        position: inherit;
+        padding:20px;
+       display: flex;
+       justify-content: space-between;
+    }
+    #home--block2
+    {
+        height:auto;
+        position: relative;
+        width:100%;
+        margin:0 auto;
+    }
+    #home--block3
+    {
+        height:auto;
+        position: inherit;
+        right:0;
+        background:#fff;
+        border-radius:10px;
+     
+    }
+
+    #home--block1 div:nth-child(2){
+      margin-top:inherit;
+       height:auto;
+    }
 }
 
 /*end*/

@@ -3,23 +3,56 @@
 @auth
 <div class="col-10 col-md-10 col-lg-10 content-profil">
   <div class="row">
-    <div class="col-3 col-md-3 col-lg-3 shadow-sm last-comment">
+  <div class="col-12 col-md-12 col-lg-12 d-flex justify-content-between shadow-sm p-2">
+            <nav class="navbar navbar-light bg-gray">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon" id="buttonMenu"></span>
+                </button>
+            </nav>
+                <div class="mx-auto col-md-6 text-center">
+                   <h2> Modification du Profil</h2>
+                </div>
+         
+                <img src="{{asset('images/logo/logopng.png')}}" class="img-responsive profilUser" width="50" alt="profil user">
+           </div>
+    <div class="col-12 col-md-12 col-lg-3 shadow-sm last-comment">
     
-     <div class="col-12 text-center p-2">
-        <!-- <form method="POST" action="{{route('profil')}}" enctype="multipart/form-data">
-         <input type="file" name="profilPhoto" class="form-control p-right" placeholder="photo de profil"/>
-           
-         </form>-->
+     <div class="col-12 col-md-12 col-lg-12 text-center p-2 infoUser mb-3">
+           <div class="figure">
             <h5> Utilisateur </h5>
-          <img src="{{Storage::url(Auth::user()->profilPhoto)}}" class="img-responsive rounded-circle col-md-8"  alt="profil user">
+          <img src="{{Storage::url(Auth::user()->profilPhoto)}}" class="img-responsive profilUser col-8 col-md-8 col-lg-8"  alt="profil user">
            
-            <p>{{$user->firstName}}  <strong>{{$user->lastName}}</strong></p>
+            <p >{{$user->firstName}}  <strong class="upper">{{$user->lastName}}</strong></p>
+            <p>{{$user->email}}</p>
+            <p>{{$user->adress}}</p>
+            </div>
              <div>
-             <h6> Derniers POSTS </h6>
+           
              </div>
         </div>
+         <div class="col-12 col-md-12 col-lg-12 text-center table-comment">
+         <h6> Derniers POSTS </h6>
+         <table class="table table-hover">
+                        <tr>
+
+                            <td><img src="{{asset('images/user.jpg')}}" width="50" alt="client photo" class="rounded-circle"></td>
+                            <td> Jaques </br> Fils</td>
+                        </tr>
+                        <tr>
+
+                        <td><img src="{{asset('images/user.jpg')}}" width="50" alt="client photo" class="rounded-circle"></td>
+                        <td> Jean</br> Louis</td>
+                        </tr>
+
+                        <tr>
+
+                        <td><img src="{{asset('images/user.jpg')}}" width="50" alt="client photo" class="rounded-circle"></td>
+                        <td> Ralph</br>  Michel</td>
+                        </tr>
+                    </table>
+         </div>
     </div>
-    <div class="col-8 col-md-8 col-lg-8 container-option">
+    <div class="col-12 col-md-12 col-lg-8 container-option">
 
     <div class="col-12 col-md-12 col-lg-12 shadow-sm modify-profil">
         <div class="col-8 col-md-8 col-lg-8 mx-auto">
