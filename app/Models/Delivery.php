@@ -2,8 +2,10 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+
+use App\Models\User;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Delivery extends Model
 {
@@ -11,6 +13,7 @@ class Delivery extends Model
 
     protected $fillable=
     [
+         'user_id',
          'nomProduit',
          'quantite',
          'montant',
@@ -20,4 +23,8 @@ class Delivery extends Model
          'etat'
 
     ];
+  
+    public function delivery(){
+        return $this->belongsTo(User::class);
+    }
 }

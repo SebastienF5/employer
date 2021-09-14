@@ -25,17 +25,23 @@
         <div class="col-12 col-md-12 col-lg-12 d-flex delivery justify-content-between">
         <div class="col-12 col-md-12 col-lg-5 delivery-form ">
          <h5 class="mb-3"> Enregistrer une vente </h5>
-  
+         @if ($errors->any())
+  @foreach($errors->all() as $error)
+     {{$errors}}
+@endforeach
+@endif
+   @Auth
         <form method="POST" action="{{route('delivery.store')}}">
             @csrf
          <div class="mb-3">
                
-               <input type="text" class="form-control" id="idClient" name="id" aria-describedby="emailHelp" disabled placeholder="ID">
-             <!--  <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>-->
+               <input type="text" class="form-control" id="idClient" name="id" aria-describedby="emailHelp" disabled placeholder="ID" value="@if(isset($delivery)){{$delivery->id}}@endif">
+              <input type="hidden" name="user_id" value="{{Auth::user()->id}}">
+               <!--  <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>-->
            </div>
             <div class="mb-3">
         
-                <input type="text" class="form-control" id="produit" aria-describedby="produitHelp" name="nomProduit" placeholder="Nom produit">
+                <input type="text" class="form-control" id="produit" aria-describedby="produitHelp" name="nomProduit" placeholder="Nom produit" value="@if(isset($delivery)){{$delivery->nomProduit}}@endif">
                 <div id="emailHelp" class="form-text">   
                     @if($errors->has('nomProduit'))
                       {{$errors->first('nomProduit')}}
@@ -44,7 +50,7 @@
             </div>
             <div class="mb-3 col-12 col-md-12 col-lg-12 d-flex justify-content-between">
             <div class="col-5">
-                <input type="text" class="form-control p-left" id="quantite" placeholder="quantite" name="quantite">
+                <input type="text" class="form-control p-left" id="quantite" placeholder="quantite" name="quantite" value="@if(isset($delivery)){{$delivery->quantite}}@endif">
                 <div id="emailHelp" class="form-text">   
                     @if($errors->has('quantite'))
                       {{$errors->first('quantite')}}
@@ -53,7 +59,7 @@
               </div>
 
               <div class="col-5">
-                <input type="text" class="form-control p-right" id="montant" placeholder="montant" readonly name="montant" value="0">
+                <input type="text" class="form-control p-right" id="montant" placeholder="montant" readonly name="montant" value="@if(isset($delivery)){{$delivery->montant}}@else {{__('0')}}@endif" >
                 <div id="emailHelp" class="form-text">   
                     @if($errors->has('montant'))
                       {{$errors->first('montant')}}
@@ -63,7 +69,7 @@
             </div>
             <div class="mb-3 col-md-12 d-flex justify-content-between">
                <div class="col-5">
-               <input type="text" class="form-control p-left" name="numeroClient" id="numero" placeholder="numeroClient ">
+               <input type="text" class="form-control p-left" name="numeroClient" id="numero" placeholder="numeroClient " value="@if(isset($delivery)){{$delivery->numeroClient}}@endif">
                <div id="emailHelp" class="form-text">   
                     @if($errors->has('numeroClient'))
                       {{$errors->first('numeroClient')}}
@@ -71,7 +77,7 @@
                 </div>
             </div>
             <div class="col-5">
-               <input type="text" class="form-control p-right" name="nomClient" id="exampleInputPassword1" placeholder="nom Client">
+               <input type="text" class="form-control p-right" name="nomClient" id="exampleInputPassword1" placeholder="nom Client" value="@if(isset($delivery)){{$delivery->nomClient}}@endif">
                <div id="emailHelp" class="form-text">   
                     @if($errors->has('nomClient'))
                       {{$errors->first('nomClient')}}
@@ -81,7 +87,7 @@
            </div>
            <div class="mb-3">
                 
-                <input type="text" class="form-control" id="adresseClient" aria-describedby="adresseHelp" name="adresseClient" placeholder="Adresse Client">
+                <input type="text" class="form-control" id="adresseClient" aria-describedby="adresseHelp" name="adresseClient" placeholder="Adresse Client" value="@if(isset($delivery)){{$delivery->adresseClient}}@endif">
                 <div id="emailHelp" class="form-text">   
                     @if($errors->has('adresseClient'))
                       {{$errors->first('adresseClient')}}
@@ -92,13 +98,14 @@
             <div class="mb-3">
                 <select class="form-select" name="etat" aria-label="Default select example">
                     <option selected>Etat</option>
-                    <option value="validee">Validee</option>
-                    <option value="en attente">En attente</option>
-                    <option value="annulee">Annulee</option>
+                    <option value="validee"  @if(isset($delivery) and $delivery->etat=="validee") {{__('selected')}} @endif >Validee</option>
+                     <option value="en attente"  @if(isset($delivery) and $delivery->etat=="en attente") {{__('selected')}} @endif >En attente</option>
+                    <option value="annulee"  @if(isset($delivery) and $delivery->etat=="annulee") {{__('selected')}} @endif >Annulee</option>
                 </select>
            </div>
              <input type="submit" class="btn btn-primary" value="Enregister">
             </form>
+            @endauth
        </div>
         <div class="col-12 col-md-12 col-lg-6 p-4 table-delivery text-center">
         <h5 class="mb-3"> Listes des ventes </h5>
@@ -120,8 +127,8 @@
             </thead>
             <tbody>
             
-     
-         
+           
+             @if($deliveries->count()>0)
                 @foreach($deliveries as $d)
     
                 <tr>
@@ -134,10 +141,13 @@
                 <td>{{$d->nomClient}}</td>
                 <td>{{$d->adresseClient}}</td>
                 <td>{{$d->etat}}</td>
-                <td><a href="#" class="p-2 update">Modifier</a></td>
+                <td><a href="{{route('delivery.updateDelivery',$d->id)}}" class="p-2 update">Modifier</a></td>
                 </tr>
                 @endforeach
-                
+                @else
+                  <tr><td colspan='9'>La base de donnees est vide</td></tr>
+                @endif
+            
             </tbody>
       
             </table>

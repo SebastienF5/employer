@@ -17,13 +17,17 @@
 <body>
     @if(Illuminate\Support\Facades\Route::is('home'))
         @include ('Partials.menuHome')
-    @elseif(Illuminate\Support\Facades\Route::is('login')|| Illuminate\Support\Facades\Route::is('register'))
-      
+        @elseif(Illuminate\Support\Facades\Route::is('login')|| Illuminate\Support\Facades\Route::is('register'))
     @else
-       @if(! Illuminate\Support\Facades\Route::is('delivery'))
-        @include('Partials.secondMenu')
-        @endif
+    
+    @if(illuminate\Support\Facades\Route::is('delivery') || illuminate\Support\Facades\Route::is('delivery.updateDelivery'))
+    
+    @else
+    @include('Partials.secondMenu')
     @endif
+    @endif
+
+     
 
 
 

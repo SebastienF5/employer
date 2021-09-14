@@ -14,8 +14,10 @@ class CreateDeliveriesTable extends Migration
 
     public function up()
     {
+     
         Schema::create('deliveries', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->constrained();
             $table->string('nomProduit');
             $table->integer('quantite');
             $table->decimal('montant');
@@ -24,6 +26,7 @@ class CreateDeliveriesTable extends Migration
             $table->string('adresseClient');
             $table->enum('etat',['validee','en attente','annulee']);
             $table->timestamps();
+
         });
     }
 
