@@ -8,6 +8,10 @@ use Symfony\Component\Routing\Route;
 
 class DeliveryController extends Controller
 {
+    /**
+     * fonction pour afficher la page dashboard
+     * @return view('delivery',compact('title'),['deliveries'=>$deliveries]);
+     */
     public function show(){
         $title="Livraison"; 
         $deliveries=Delivery::all();
@@ -15,6 +19,12 @@ class DeliveryController extends Controller
         return view('delivery',compact('title'),['deliveries'=>$deliveries]);
     
     }
+
+    /**
+     * fonction pour stocker les ventes 
+     * @param request
+     * @return  redirect(Route('delivery'));
+     */
   
     public function store(Request $request)
     {
@@ -95,5 +105,7 @@ class DeliveryController extends Controller
    
             return view('delivery',compact('title'),['delivery'=>$delivery,'deliveries'=>$deliveries]);
       }
+
+ 
 
 }

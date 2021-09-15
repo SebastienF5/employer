@@ -29,7 +29,7 @@
                 <i class="fas fa-eye"></i>
                </div>
                <div class="col-12 col-md-3 col-lg-2 bg-white shadow-sm">
-               <p>100<br><span>Ventes</span></p>
+               <p>{{$count}}<br><span>Vente(s)</span></p>
                <i class="fas fa-shopping-cart"></i>
                </div>
                <div class="col-12 col-md-2 col-lg-2 bg-white shadow-sm">
@@ -37,7 +37,7 @@
                <i class="fas fa-comments"></i>
                </div>
                <div class="col-12 col-md-2 col-lg-2 bg-white shadow-sm">
-               <p>$120000 <br><span>Benefices</span></p>
+               <p>$ {{$montant}} <br><span>Montant</span></p>
                <i class="fas fa-dollar-sign"></i>
                </div>
               
@@ -60,31 +60,15 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                <th scope="row">Rix</th>
-                <td>$100</td>
-                <td>Paye</td>
-                <td><span class="bg-success">Validee</span></td>
-                </tr>
-                <tr>
-                <th scope="row">Mais</th>
-                <td>$300</td>
-                <td>Due</td>
-                <td ><span class="bg-danger">Annulee</span></td>
-                </tr>
-                <tr>
-                <th scope="row">Rix</th>
-                <td >$500</td>
-                <td>Non Paye</td>
-                <td ><span class="bg-warning">En attente</span></td>
-                </tr>
-                <tr>
-                <th scope="row">Rix</th>
-                <td>$100</td>
-                <td>Paye</td>
-                <td ><span class="bg-success ">Validee</span></td>
-                </tr>
-            </tbody>
+                @foreach($sell as $s)
+                    <tr>
+                    <th scope="row">{{$s->nomProduit}}</th>
+                    <td>{{$s->montant}}</td>
+                    <td>@if($s->etat=='validee'){{__('Paye')}} @elseif($s->etat=='annulee'){{__('Annulee')}} @else {{__('Due')}}   @endif</td>
+                    <td><span class="@if($s->etat=='validee'){{__('bg-success')}} @elseif($s->etat=='anullee'){{__('bg-danger')}} @else {{__('bg-warning')}}   @endif">{{$s->etat}}</span></td>
+                    </tr>
+                @endforeach
+              </tbody>
            </table>
            </div>
        </div>
