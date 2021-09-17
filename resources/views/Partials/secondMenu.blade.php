@@ -1,7 +1,8 @@
-<div class="container-fluid">
+<div class="container-fluid" >
  <div class="row">
- <div class="col-2 col-md-2 col-lg-2 menu-dashboard p-4 position-fixed text-center collapse"  id="navbarToggleExternalContent">
-    <span class="p-2 appName">{{config('app.name')}}</span>
+ <div class="col-2 col-md-2 col-lg-2 menu-dashboard p-4 position-fixed text-center collapse "  id="navbarToggleExternalContent">
+    <div id="menu2nd col-12">
+ <span class="p-2 appName">{{config('app.name')}}</span>
     <div class="item-dashboard">
         <ul class="list-unstyled">
             <li><a href="{{route('home')}}"> <i class="fas fa-home"></i><br/>Accueil  </a></li>
@@ -17,8 +18,9 @@
         <form id="logout-form" action="{{ route('logout') }}" method="POST" >
             {{ csrf_field() }}
             
-           <input type="submit" name="logout" value="quitter" class="btn btn-default">
+           <input type="submit" name="logout" value="Quitter" class="btn bg-red color--white">
        </form>
     </div>
+</div>
 </div>
 

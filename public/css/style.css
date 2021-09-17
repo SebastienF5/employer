@@ -2,9 +2,31 @@ body{
     background: #f8f9fa;
    /* #CCCCCC;*/
 }
-
+.offcanva{
+    display: none;
+}
 a{
     text-decoration: none;
+}
+.color--white{
+    color:#fff !important;
+}
+.border-1
+{
+    border:1px solid #e9ecef !important;
+}
+
+.border-2
+{
+    border:2px solid #e9ecef !important;
+}
+
+.bg-blue{
+    background:#0167ad !important;
+}
+
+.bg-red{
+    background:#ff0118 !important;
 }
 
 .form-text{
@@ -15,11 +37,26 @@ a{
      height:100vh;
      position: fixed;
      padding:20px;
+     color:#fff;
  }
+
+ #home--block1 a,input{
+  
+ }
+
+ #pageHome#home--block1 a
+ {
+   color:#0167ad !important; 
+   
+ }
+
 
  #home--block2 i{
      font-size:30px;
      
+ }
+ #comment{
+     display: none;
  }
  .bg-white{
     background:#fff;
@@ -47,8 +84,8 @@ a{
     height:100vh;
     position: fixed;
     right:0;
-    background:#fff;
     border-radius:10px;
+    color:white;
 }
 
 #home--block2{
@@ -56,7 +93,7 @@ a{
     position: relative;
     width:60%;
     margin:0 auto;
-
+ 
 }
 
 .reunion{
@@ -76,7 +113,8 @@ a{
 }
 
 .interaction span{
-    margin-left:10px;
+   /* margin-left:10px;*/
+   text-align:right !important;
 }
 
 #home--block1 a{
@@ -85,8 +123,13 @@ a{
 }
 
 #home--block1 a i{
-    margin-left:10px;
-    font-size: 1.3rem;
+
+    font-size:30px;
+
+}
+.fa-sign-out-alt{
+    font-size:30px;
+    color:#0167ad;
 }
 
 .interaction span i{
@@ -94,9 +137,10 @@ a{
     margin-left:60px;
 }
 .label-reunion{
-    background-color: rgb(60, 94, 37);
+   /* background-color: rgb(60, 94, 37);
+   background-color:#ff0018;*/
 
-    background: radial-gradient(  rgb(118, 184, 73),rgb(60, 94, 37));
+   background: radial-gradient(  rgb(118, 184, 73),rgb(60, 94, 37));
     color:#fff;
     border-radius:10px;
 }
@@ -126,9 +170,17 @@ ul#menuWithIcon  li{
 /*dashboard part */
 .menu-dashboard{
     height:100vh;
-    background: radial-gradient(  rgb(118, 184, 73),rgb(60, 94, 37));
+   /* background: radial-gradient(  rgb(118, 184, 73),rgb(60, 94, 37));*/
+   background:url(../images/riceF.jpg);
+   background-size:cover;
+ 
      color:#fff !important;
 
+}
+
+#menu2nd {
+
+  
 }
 
 .profilUser{
@@ -294,7 +346,16 @@ td span{
 /*end dashboard*/
 
 /*delivery*/
-
+.offcanva nav{
+    margin-top:-40px;
+}
+.offcanvas-body ul li i{
+    font-size:30px;
+    margin-top:30px;
+}
+.menuBar{
+    margin-top:20px;
+}
 .table-delivery{
   height:475px;
     background:#fff;
@@ -471,6 +532,9 @@ margin-right:-40px;
 
 /*media query register*/
 @media screen and (max-width:750px){
+    .offcanva{
+        display:block;
+    }
     .registrer-logo{
         margin-top:-80px;
         width:50%;
@@ -560,16 +624,26 @@ margin-right:-40px;
     display: block !important;
 }
 
+
+.content-dashboard nav{
+    display: none !important;
+}
+
 /*dashboard media query */
 @media screen and (max-width:750px){
-  
+    .content-dashboard nav{
+        display:block !important;
+    }
     .menu-dashboard{
      position:absolute !important;
      z-index:45;
      top:17%;
-     width:80%;
-
+     width:50%;
+     display:none !important;
     }
+    /* .menu-dashboard{
+        display: block !important;
+    } */
     .content-dashboard nav{
         display: block !important;
     }
@@ -675,6 +749,9 @@ margin-right:-40px;
        display: flex;
        justify-content: space-between;
     }
+    #home--block2 a{
+        color:#0167ad;
+    }
     #home--block2
     {
         height:auto;
@@ -687,7 +764,7 @@ margin-right:-40px;
         height:auto;
         position: inherit;
         right:0;
-        background:#fff;
+        color:white;
         border-radius:10px;
      
     }

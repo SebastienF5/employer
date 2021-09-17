@@ -32,10 +32,10 @@
       </ul>
      
       <p>
-    
-        <a href="{{route('login')}}">Login</a>/
+        <span>ManjAyiti</span>
+       <!-- <a href="{{route('login')}}">Login</a>/
        
-        <a href="{{route('register')}}">Registrer</a>
+        <a href="{{route('register')}}">Registrer</a>-->
      
       </p>
    </div>

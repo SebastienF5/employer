@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Comment;
 use App\Models\Delivery;
 use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Notifications\Notifiable;
@@ -57,5 +58,9 @@ class User extends Authenticatable
     
     public function deliveries(){
         return $this->hasMany(Delivery::class);
+    }
+
+    public function comments(){
+        return $this->hasMany(Comment::class);
     }
 }

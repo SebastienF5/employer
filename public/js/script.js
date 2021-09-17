@@ -2,11 +2,11 @@ var showMenu=document.getElementById('buttonMenu');
 var menu=document.getElementsByClassName('.menu-dashboard');
 
 showMenu.addEventListener("click",function myfunction(){
-   menu.style.display='block !important';
-
+  menu.style.display='none !important';
+    // alert("j ai clique");
 });
-if((document.getElementById('buttonMenu'))){
-}
+// if((document.getElementById('buttonMenu'))){
+// }
 
 //    anime({
 //     targets:'.menu-dashboard',
@@ -25,6 +25,7 @@ const PRICE=80;
 var montant=document.getElementById('montant');
 var quantite=document.getElementById('quantite');
 
+if(quantite!=null){
 quantite.addEventListener("change",function setMontant(){
    
    var qte=quantite.value;
@@ -32,5 +33,16 @@ quantite.addEventListener("change",function setMontant(){
    montant.value=qte * PRICE;
 
 });
+}
+
+/*end*/
+
+/*click home*/
+var like=document.querySelector('i.fa-thumbs-up');
+
+like.addEventListener("click",function cl (){
+   like.style.color='#0167ad';
+});
+
 
 /*end*/

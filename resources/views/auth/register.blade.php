@@ -11,10 +11,14 @@
              <form method="POST" action="{{route('register')}}" enctype="multipart/form-data">
              @csrf
            <div class="mb-3 d-flex justify-content-between rightLeft">
-             <input type="text" class="form-control mx-2" id="firstName" aria-describedby="nameHelp" placeholder="Nom" name="firstName" :value="old('firstName')" required autofocus >
-             <!--  <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>-->
-             <input type="text" class="form-control" id="lastName" aria-describedby="lastNameHelp" name="lastName" placeholder="Prenom" aria-describedby="nameHelp" placeholder="Nom" :value="old('lastName')" required >
-               
+             <input type="text" class="form-control mx-2" id="firstName" aria-describedby="nameHelp" placeholder="Prenom" name="firstName" :value="old('firstName')" required autofocus >
+              <div id="emailHelp" class="form-text">
+              @if($errors->has('firstName'))
+                      {{$errors->first('firstName')}}
+             @endif
+              </div>
+             <input type="text" class="form-control" id="lastName" aria-describedby="lastNameHelp" name="lastName" placeholder="Nom" aria-describedby="nameHelp" placeholder="Nom" :value="old('lastName')" required >
+        
             </div>
            
             <div class="mb-3 d-flex justify-content-between rightLeft">

@@ -3,14 +3,11 @@
 @section('content')
 @auth
  <div class="col-10 col-md-10 col-lg-10 content-dashboard">
+     
      <div class="row">
         <div class="col-12 col-md-12 col-lg-12  p-4 dash-head">
-            <div class="col-12 d-flex justify-content-between shadow-sm p-2">
-            <nav class="navbar navbar-light bg-gray">
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon" id="buttonMenu"></span>
-                </button>
-            </nav>
+            <div class="col-12 d-flex justify-content-between shadow-sm p-2 menuBar">
+           
                 <div class="mx-auto col-md-6">
                     <form action="" method="POST">
                     <div class="mb-3 container-search">

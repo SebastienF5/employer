@@ -19,15 +19,11 @@
         @include ('Partials.menuHome')
         @elseif(Illuminate\Support\Facades\Route::is('login')|| Illuminate\Support\Facades\Route::is('register'))
     @else
-    
-    @if(illuminate\Support\Facades\Route::is('delivery') || illuminate\Support\Facades\Route::is('delivery.updateDelivery'))
-    
-    @else
-    @include('Partials.secondMenu')
-    @endif
+     @include('Partials.OffCanva')
+     @include('Partials.secondMenu')
+ 
     @endif
 
-     
 
 
 
